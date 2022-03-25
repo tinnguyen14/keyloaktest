@@ -42,7 +42,6 @@ class RNAdapter implements KeycloakAdapter {
    */
   async login(options?: KeycloakLoginOptions): Promise<void> {
     const loginUrl = this.client.createLoginUrl(options);
-
     if (await InAppBrowser.isAvailable()) {
       // See for more details https://github.com/proyecto26/react-native-inappbrowser#authentication-flow-using-deep-linking
       const res = await InAppBrowser.openAuth(
